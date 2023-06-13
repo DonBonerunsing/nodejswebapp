@@ -17,7 +17,7 @@ phases:
       - echo Logging in to Amazon ECR...
       - aws ecr get-login-password --region us-east-2 | docker login --username AWS --password-stdin 801011517441.dkr.ecr.us-east-2.amazonaws.com
       - IMAGE_REPO_NAME=801011517441.dkr.ecr.us-east-2.amazonaws.com/nodejsapp
-      - IMAGE_TAG=latest $IMAGE_REPO_NAME:$TAG
+      - IMAGE_TAG=$IMAGE_REPO_NAME:$TAG
   build:
     commands:
       - echo Build started on `date`
